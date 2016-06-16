@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #8493a3
+  }
+
+  .wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #8493a3
+  }
+  main {
+    flex: 1 0 auto;
+  }
+
+.slider {
+margin: auto;
+  width: 75%
+}
+
+.materialboxed {
+  margin: auto;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: #ee6e73
+}
+
+/*From*/
+.login {
+  background-color: white;
+  border-style: solid;
+  border-color: black
+}
+/* label color */
+  .input-field label {
+    color: #ee6e73;
+  }
+
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #ee6e73;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #a64d50;
+    box-shadow: 0 1px 0 0 #ee6e73;
+  }
+
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #ee6e73;
+    box-shadow: 0 1px 0 0 #ee6e73;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #ee6e73;
+    box-shadow: 0 1px 0 0 #ee6e73;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #ee6e73;
+  }
+
+  .row a {
+    display: block;
+  }
+
+  h3 {
+        text-align: center;
+  }
+
+/*Typography*/
+h1 {
+    font: 600 1.5em/1 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-variant: small-caps;
+    top: 25%;
+    width: 100%;
+}
+
+span, span:after {
+    font-weight: 900;
+    color: #F8F8F8  ;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    letter-spacing: .1em;
+    padding: .2em 0 .25em 0;
+}
+
+span {
+    font-size: 4em;
+    z-index: 100;
+    text-shadow: .04em .04em 0 #2c3e50;
+}
+
+span:after {
+    content: attr(data-shadow-text);
+    color: #2c3e50;
+    text-shadow: none;
+    position: absolute;
+    left: .0875em;
+    top: .0875em;
+    z-index: -1;
+  -webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+}
+
+.btn {
+  background-color: #ee6e73
+}
+
+.btn:hover {
+  background-color: #a64d50
+}
+
+.border:hover{
+  border-color: #a64d50
+}
+
+p{
+  display: inline;
+}
+
+select {
+  display: inline;
+  width: 40px
+}

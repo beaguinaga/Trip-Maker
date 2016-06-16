@@ -1,0 +1,78 @@
+.jumbotron h1, .panel-heading h1, #myModalLabel {
+  font-family: 'Share Tech Mono' ;
+  text-align: center;
+}
+​
+body {
+  background-image: url('citybg.jpg');
+  background-position:center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+​
+.container {
+  margin-top: 15px;
+}
+​
+.jumbotron {
+  -webkit-box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+}
+​
+#results-panel {
+  -webkit-box-shadow: 0px 3px 50px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 50px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 50px 4px rgba(0,0,0,0.75);
+}
+​
+.modal-content {
+  -webkit-box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 50px 25px rgba(0,0,0,0.75);
+}
+​
+#interest {
+  display: inline;
+}
+​
+#uberPic {
+  display: inline;
+  padding: 15px;
+}
+​
+#uberPicHolder {
+  text-align: center;
+}
+​
+#goButton {
+  font-size: 30px;
+}
+​
+#goForm {
+  margin-top: 5px;
+  height: 50px;
+}
+​
+.input-group {
+}
+​
+.table {
+  text-align: center;
+}
+​
+.panel-heading {
+  text-align: center;
+}
+​
+#distance {
+  color: rgb(204, 204, 204);
+}
+​
+#myModalLabel {
+  font-size: 40px;
+}
+​
+#venueName {
+  color: #DF691A;
+}

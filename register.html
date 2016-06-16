@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trip Maker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <h1 class="center-align"><span data-shadow-text="Trip Maker">Trip Maker</span><br></h1>
+
+
+    <!--Photo Slider-->
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="plane.jpeg"> <!-- random image -->
+        <div class="caption center-align">
+          <!-- <h3>This is our big Tagline!</h3> -->
+          <h5 class="light grey-text text-lighten-3">Whether on a plane...</h5>
+        </div>
+      </li>
+      <li>
+        <img src="car.jpeg"> <!-- random image -->
+        <div class="caption left-align">
+          <!-- <h3>Left Aligned Caption</h3> -->
+          <h5 class="light grey-text text-lighten-3">Or on a road-trip...</h5>
+        </div>
+      </li>
+      <li>
+        <img src="journal.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <!-- <h3>Right Aligned Caption</h3> -->
+          <h5 class="light grey-text text-lighten-3">Let us HELP by making your planning easy.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="cam-suitcase.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <!-- <h3>This is our big Tagline!</h3> -->
+          <h5 class="light grey-text text-lighten-3">So you can pack your bags...</h5>
+        </div>
+      </li>
+      <li>
+        <img src="tourist.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <!-- <h3>This is our big Tagline!</h3> -->
+          <h5 class="light grey-text text-lighten-3">And be worry free!</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!--Form-->
+  <div class="row login">
+    <h3>Please Sign-Up!</h3>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="First" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Last" id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Password"id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="email@email.com" id="email" type="email" class="validate">
+          <label for="email">Email</label>
+          <a href="index.html" class="waves-effect waves-light btn">Submit</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+    <!--Footer-->
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="login.html">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="register.html">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="index.html">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="fly.html">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="drive.html">Link 5</a></li>
+                  <li><a class="grey-text text-lighten-3" href="profile.html">Link 6</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+        <script src="app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.js"></script>
+  </body>
+</html>
