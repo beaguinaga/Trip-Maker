@@ -1,19 +1,24 @@
-angular.module('tripMakerApp', ['google.places'])
-//   .config(tripMakerRouter)
-//
-// tripMakerRouter.$inject = ['$stateProvider', '$urlRouterProvider']
-//
-// function tripMakerRouter ($stateProvider, $urlRouterProvider) {
-//
-//   $stateProvider
-//     .state('home', {
-//       url: '/',
-//       templateUrl: 'home.html',
-//       controller: 'homeCtrl as hCtrl'
-//     })
-//
-//     $urlRouterProvider.otherwise('/')
-// }
+angular.module('tripMakerApp', ['ui.router'])
+  .config(tripMakerRouter)
+
+tripMakerRouter.$inject = ['$stateProvider', '$urlRouterProvider']
+
+function tripMakerRouter ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'home.html',
+      controller: 'homeCtrl as hCtrl'
+    })
+    .state('driving', {
+      url: '/driving',
+      templateUrl: 'driving.html',
+      controller: 'homeCtrl as hCtrl'
+    })
+
+    $urlRouterProvider.otherwise('/')
+}
 
 
 
@@ -24,16 +29,13 @@ function homeController() {
   var hCtrl = this;
   hCtrl.title = "Trip Maker";
 
-  hCtrl.getLocation = function() {
-    console.log(hCtrl.place);
-  }
-
   hCtrl.getHotels = function () {
+    hCtrl.destination = document.getElementById('destination').value;
     var key= 'chxdwwtpqfdubk2wj49643jk';
     var destination = document.getElementById('destination').value;
 
     destination = destination.split(' ');
-    console.log(destination)
+    // console.log(destination)
 
     var formattedDestination = '';
     for (var i = 0; i < destination.length; i++) {
@@ -44,13 +46,13 @@ function homeController() {
       }
     }
 
-    console.log(formattedDestination)
+    // console.log(formattedDestination)
 
     var startDate = document.getElementById('startDate').value;
 
     startDate = startDate.split('-')
     var formattedStartDate = startDate[1] + '/' + startDate[2] + '/' + startDate[0];
-    console.log(formattedStartDate)
+    // console.log(formattedStartDate)
 
     var endDate = document.getElementById('endDate').value;
 
@@ -68,25 +70,94 @@ function homeController() {
 
     $.get(getUri, function(data) {
       console.log('success');
-      console.log(data);
-      var results = data.getElementsByTagName("HotelResult")
+      // console.log(data);
+      var results = data.getElementsByTagName("TotalPrice")
+      for (result of results) {
+        console.log(result.innerHTML)
+      }
       // var nodes = results.childNodes;
-      console.log(results)
+      // console.log(results)
     })
+
+    /////// Calls ipinfo's API to get client Lat/Long /////////
+    $.get("http://ipinfo.io", function(response) {
+      // Takes response and splits into Lat/Long parts
+      hCtrl.locationArray = response.loc.split(',')
+      // Sends client location to foursquare API function
+      console.log(hCtrl.locationArray)
+
+      GMaps.geocode({
+        address: hCtrl.destination,
+        callback: function(results, status) {
+          if (status == 'OK') {
+            var latlng = results[0].geometry.location;
+            console.log(latlng.lat(),latlng.lng())
+
+            console.log(((latlng.lat() - parseInt(hCtrl.locationArray[0])) / 2))
+            console.log(((parseInt(hCtrl.locationArray[1]) - latlng.lng()) / 2))
+
+            // northeast
+            var centerLat = (((latlng.lat() - parseInt(hCtrl.locationArray[0])) / 2) + parseInt(hCtrl.locationArray[0]));
+            var centerLng = (parseInt(hCtrl.locationArray[1]) - ((parseInt(hCtrl.locationArray[1]) - latlng.lng()) / 2));
+
+            var zoomLevel;
+            if ((Math.abs((latlng.lat() - parseInt(hCtrl.locationArray[0])) / 2)) > 0 || (Math.abs(((parseInt(hCtrl.locationArray[1]) - latlng.lng()) / 2))) > 0) {
+              zoomLevel = 8;
+            }
+            if ((Math.abs((latlng.lat() - parseInt(hCtrl.locationArray[0])) / 2)) > 2 || (Math.abs(((parseInt(hCtrl.locationArray[1]) - latlng.lng()) / 2))) > 2) {
+              zoomLevel = 6;
+            }
+            if ((Math.abs(((latlng.lat() - parseInt(hCtrl.locationArray[0])) / 2))) > 10 || (Math.abs((parseInt(hCtrl.locationArray[1]) - latlng.lng()) / 2)) > 10) {
+              zoomLevel = 5;
+            }
+
+            console.log(zoomLevel)
+
+            console.log(centerLat,centerLng)
+
+
+            console.log('started map')
+            hCtrl.map = new GMaps({
+              div: '#map',
+              lat: centerLat,
+              lng: centerLng,
+              zoom: zoomLevel
+            });
+
+            hCtrl.map.drawRoute({
+              origin: [hCtrl.locationArray[0], hCtrl.locationArray[1]],
+              destination: [latlng.lat(), latlng.lng()],
+              travelMode: 'driving',
+              strokeColor: '#131540',
+              strokeOpacity: 0.6,
+              strokeWeight: 6
+            });
+
+          }
+        }
+      });
+
+    }, "jsonp");
+
+
+
+
   }
-}
 
-$(document).ready(function(){
-  $('.slider').slider({full_width: true});
-});
+  $(document).ready(function(){
+    $('.slider').slider({full_width: true});
+  });
 
-$(document).ready(function(){
-  $('.materialboxed').materialbox();
-});
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
 
-//Collapsible
-$(document).ready(function(){
-   $('.collapsible').collapsible({
-     accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  //Collapsible
+  $(document).ready(function(){
+     $('.collapsible').collapsible({
+       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+     });
    });
- });
+
+
+}

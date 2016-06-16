@@ -6,7 +6,8 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAueN6DmndyqOlcugCEwf8ilDqZ6pcrYKc"></script>
+    <script src="gmaps.js" charset="utf-8"></script>
     <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.css">
@@ -17,109 +18,7 @@
 
     <h1 class="center-align"><span data-shadow-text="Trip Maker">Trip Maker</span><br></h1>
 
-
-    <!--Photo Slider-->
-    <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="plane.jpeg">
-        <div class="caption center-align">
-          <!-- <h3>This is our big Tagline!</h3> -->
-          <h5 class="light grey-text text-lighten-3">Whether on a plane...</h5>
-        </div>
-      </li>
-      <li>
-        <img src="car.jpeg">
-        <div class="caption left-align">
-          <!-- <h3>Left Aligned Caption</h3> -->
-          <h5 class="light grey-text text-lighten-3">Or on a road-trip...</h5>
-        </div>
-      </li>
-      <li>
-        <img src="journal.jpg">
-        <div class="caption right-align">
-          <!-- <h3>Right Aligned Caption</h3> -->
-          <h5 class="light grey-text text-lighten-3">Let us HELP by making your planning easy.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="cam-suitcase.jpg">
-        <div class="caption center-align">
-          <!-- <h3>This is our big Tagline!</h3> -->
-          <h5 class="light grey-text text-lighten-3">So you can pack your bags...</h5>
-        </div>
-      </li>
-      <li>
-        <img src="tourist.jpg">
-        <div class="caption bottom-center-align">
-          <!-- <h3>This is our big Tagline!</h3> -->
-          <h5 class="light grey-text text-lighten-3">And have the trip of a lifetime!</h5>
-        </div>
-      </li>
-    </ul>
-    </div>
-
-
-    <!--Form-->
-    <div class="row login">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="destination" type="text" class="validate" g-places-autocomplete ng-model="hCtrl.place">
-          <label for="first_name">Where are you going?</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <label for="start-date">Start Date</label><br>
-          <input id="startDate" type="date" class="datepicker">
-        </div>
-        <div class="input-field col s6">
-          <label for="end-date">End Date</label><br>
-          <input id="endDate" type="date" class="datepicker">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <!-- Collapsible -->
-            <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                  <div class="collapsible-header"><i class="material-icons"></i>In Need of a Hotel?</div>
-                  <div class="collapsible-body">
-                    How many Rooms?
-                      <select id="numOfRooms">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                      </select>
-                      How many adults?
-                        <select id="numOfAdults">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                        </select>
-                      How many children?
-                        <select id=numOfChildren>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                        </select>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-          </div>
-        </div>
-        <div class="row pictures">
-          <div class="input-field col s6">
-            <a href="fly.html" class="waves-effect waves-light btn" ng-click="hCtrl.getLocation()">Flying?</a>
-          </div>
-          <div class="input-field col s6">
-            <a class="waves-effect waves-light btn" ng-click="hCtrl.getHotels()">Driving?</a>
-        </div>
-      </div>
-    </form>
-    </div>
+    <ui-view></ui-view>
 
   <!--Footer-->
   <footer class="page-footer">
