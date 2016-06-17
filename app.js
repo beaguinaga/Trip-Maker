@@ -107,8 +107,8 @@ function homeController($http,$scope) {
           console.log(results[i].innerHTML)
 
           $('#hotels').append('<p><a class="waves-effect waves-light btn" href=' + bookUrl[i].innerHTML + '>BOOK NOW</a></p>');
-          $('#hotels').append('<p>' + avgPPN[i].innerHTML + '</p>');
-          $('#hotels').append('<p>' + results[i].innerHTML + '</p>');
+          $('#hotels').append('<p>Average Nightly Price: ' + avgPPN[i].innerHTML + '</p>');
+          $('#hotels').append('<p>Total Price for your trip: ' + results[i].innerHTML + '</p>');
           // if (mallThing.contact.formattedPhone) {
           // $('#hotels').append('<p>' + hotel.contact.formattedPhone + '</p>');
           // }

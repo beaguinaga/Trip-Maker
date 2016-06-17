@@ -5,15 +5,14 @@
     <li>
       <img src="plane.jpeg">
       <div class="caption center-align">
-        <!-- <h3>This is our big Tagline!</h3> -->
-        <h5 class="light grey-text text-lighten-3">Whether on a plane...</h5>
+        <h5 class="light grey-text text-lighten-3 ">Whether traveling by air...</h5>
       </div>
     </li>
     <li>
       <img src="car.jpeg">
       <div class="caption left-align">
         <!-- <h3>Left Aligned Caption</h3> -->
-        <h5 class="light grey-text text-lighten-3">Or on a road-trip...</h5>
+        <h5 id="colbla" class="light grey-text text-lighten-3">Or taking your trip on the open road...</h5>
       </div>
     </li>
     <li>
@@ -27,14 +26,14 @@
       <img src="cam-suitcase.jpg">
       <div class="caption center-align">
         <!-- <h3>This is our big Tagline!</h3> -->
-        <h5 class="light grey-text text-lighten-3">So you can pack your bags...</h5>
+        <h5 class="light grey-text text-lighten-3 colbla">So you can pack your bags...</h5>
       </div>
     </li>
     <li>
       <img src="tourist.jpg">
-      <div class="caption bottom-center-align">
+      <div class="caption right-align">
         <!-- <h3>This is our big Tagline!</h3> -->
-        <h5 class="light grey-text text-lighten-3">And have the trip of a lifetime!</h5>
+        <h5 id="colbla" class="light grey-text text-lighten-3">And have the trip of a lifetime!</h5>
       </div>
     </li>
   </ul>
@@ -49,7 +48,7 @@
         <input id="destination" type="text" class="validate" g-places-autocomplete ng-model="hCtrl.place">
         <label for="first_name">Where are you going?</label>
       </div>
-    </div>
+
     <div class="row">
       <div class="input-field col s6">
         <label for="start-date">Start Date</label><br>
@@ -59,9 +58,8 @@
         <label for="end-date">End Date</label><br>
         <input id="endDate" type="date" class="datepicker">
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
+
+
           <!-- Collapsible -->
           <ul class="collapsible" data-collapsible="accordion">
               <li>
@@ -99,14 +97,16 @@
                 </div>
               </li>
             </ul>
+              <div class="row pictures">
+                <div class="input-field col s6">
+                  <a ui-sref="fly" class="waves-effect waves-light btn" ng-click="hCtrl.getHotels()">Flying?</a>
+                </div>
+                <div class="input-field col s6">
+                  <a class="waves-effect waves-light btn" ui-sref="driving" ng-click="hCtrl.getHotels(); hCtrl.getMap()">Driving?</a>
+            </div>
         </div>
       </div>
-      <div class="row pictures">
-        <div class="input-field col s6">
-          <a ui-sref="fly" class="waves-effect waves-light btn" ng-click="hCtrl.getHotels()">Flying?</a>
-        </div>
-        <div class="input-field col s6">
-          <a class="waves-effect waves-light btn" ui-sref="driving" ng-click="hCtrl.getHotels(); hCtrl.getMap()">Driving?</a>
+</div>
       </div>
     </div>
   </form>

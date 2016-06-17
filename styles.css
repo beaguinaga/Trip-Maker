@@ -32,7 +32,8 @@ margin: auto;
 .login {
   background-color: white;
   border-style: solid;
-  border-color: black
+  border-color: black;
+  width: 50%
 }
 /* label color */
   .input-field label {
@@ -132,8 +133,9 @@ p{
 }
 
 .collfly p{
-  background-color: #8493a3;
-  color: white;
+  background-color: white;
+  color: black;
+  text-align: left;
 }
 
 select {
@@ -191,4 +193,16 @@ collapsible-body p {
 
 .collapsible.popout {
     padding-bottom: 20px;
+}
+
+.material-icon{
+  font-size: 14px
+}
+
+h3{
+  font-size: 15px;
+}
+
+#colbla{
+  color: black !important
 }
