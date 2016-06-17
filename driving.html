@@ -5,8 +5,18 @@
 
   <ul class="collapsible popout collfly" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header"><i class="material-icons"></i>Hotels</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="collapsible-header modal-trigger" href="#modal7"><i class="material-icons"></i>Hotels</div>
+        <!-- <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div> -->
+        <div id="modal7" class="modal">
+          <div class="modal-content">
+            <h3>Hotels<h3>
+            <div id="hotels">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
       </li>
       <li>
         <div class="collapsible-header"><i class="material-icons"></i>Things to Do</div>
@@ -16,8 +26,9 @@
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
               <div class="modal-content">
-                <h4>Nightlife</h4>
-                <p>A bunch of text</p>
+                <h3>Nightlife</h3>
+                <div id="bars">
+                </div>
               </div>
               <div class="modal-footer">
                 <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -29,7 +40,7 @@
                 <div id="modal2" class="modal">
                   <div class="modal-content">
                     <h4>Fun</h4>
-                    <p>A bunch of text</p>
+                    <div id="funThings"></div>
                   </div>
                   <div class="modal-footer">
                     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -41,7 +52,7 @@
                     <div id="modal3" class="modal">
                       <div class="modal-content">
                         <h4>Shopping</h4>
-                        <p>A bunch of text</p>
+                        <div id="mallThings"></div>
                       </div>
                       <div class="modal-footer">
                         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -69,7 +80,7 @@
                           <div id="modal5" class="modal">
                             <div class="modal-content">
                               <h4>Burgers</h4>
-                              <p>A bunch of text</p>
+                              <div id="burgerThings"></div>
                             </div>
                             <div class="modal-footer">
                               <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
