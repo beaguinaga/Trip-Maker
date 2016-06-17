@@ -122,9 +122,18 @@ span:after {
 .border:hover{
   border-color: #a64d50
 }
-
+/*
 p{
   display: inline;
+}*/
+
+.collapsible-body p{
+  padding: 0;
+}
+
+.collfly p{
+  background-color: #8493a3;
+  color: white;
 }
 
 select {
@@ -132,7 +141,54 @@ select {
   width: 40px
 }
 
+.priceRange{
+  width: 95px
+}
+
 #map {
   width: 100%;
   height: 500px;
+  padding: 0;
+}
+
+div #map{
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.flypic {
+  background-image: url("plane.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+}
+
+.drivepic{
+  background-image: url("car.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+}
+
+collapsible-body p {
+    padding: 0;
+    background-color: #8493a3;
+    color: white;
+}
+
+.popout {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+#fot{
+  margin-top: 0;
+}
+
+.collapsible.popout {
+    padding-bottom: 20px;
 }

@@ -6,14 +6,34 @@ tripMakerRouter.$inject = ['$stateProvider', '$urlRouterProvider']
 function tripMakerRouter ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'login.html',
+      controller: 'homeCtrl as hCtrl'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'register.html',
+      controller: 'homeCtrl as hCtrl'
+    })
     .state('home', {
-      url: '/',
+      url: '/home',
       templateUrl: 'home.html',
       controller: 'homeCtrl as hCtrl'
     })
     .state('driving', {
       url: '/driving',
       templateUrl: 'driving.html',
+      controller: 'homeCtrl as hCtrl'
+    })
+    .state('fly', {
+      url: '/fly',
+      templateUrl: 'fly.html',
+      controller: 'homeCtrl as hCtrl'
+    })
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'profile.html',
       controller: 'homeCtrl as hCtrl'
     })
 
@@ -147,6 +167,11 @@ function homeController() {
   $(document).ready(function(){
     $('.slider').slider({full_width: true});
   });
+
+  $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
 
   $(document).ready(function(){
     $('.materialboxed').materialbox();

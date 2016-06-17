@@ -67,24 +67,34 @@
               <li>
                 <div class="collapsible-header"><i class="material-icons"></i>In Need of a Hotel?</div>
                 <div class="collapsible-body">
-                  How many Rooms?
+                  <p>How many Rooms?
                     <select id="numOfRooms">
+                      <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                    </select>
-                    How many adults?
+                    </select></p>
+                    <p>How many Adults?
                       <select id="numOfAdults">
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                      </select>
-                    How many children?
+                      </select></p>
+                    <p>How many Children?
                       <select id=numOfChildren>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                      </select>
+                      </select></p>
+                      <p>What is your Price Range per night?
+                        <select id=numOfChildren class="priceRange">
+                          <option value="0">Any</option>
+                          <option value="1"><$100</option>
+                          <option value="2">$100-$150</option>
+                          <option value="3">$150+</option>
+                        </select></p>
                   </div>
                 </div>
               </li>
@@ -93,7 +103,7 @@
       </div>
       <div class="row pictures">
         <div class="input-field col s6">
-          <a href="fly.html" class="waves-effect waves-light btn" ng-click="hCtrl.getLocation()">Flying?</a>
+          <a ui-sref="fly" class="waves-effect waves-light btn" ng-click="hCtrl.getLocation()">Flying?</a>
         </div>
         <div class="input-field col s6">
           <a class="waves-effect waves-light btn" ui-sref="driving" ng-click="hCtrl.getHotels(); hCtrl.getMap()">Driving?</a>

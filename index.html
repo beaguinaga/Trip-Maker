@@ -15,13 +15,14 @@
   </head>
 
   <body ng-controller="homeCtrl as hCtrl">
-
+    
     <h1 class="center-align"><span data-shadow-text="Trip Maker">Trip Maker</span><br></h1>
+
 
     <ui-view></ui-view>
 
   <!--Footer-->
-  <footer class="page-footer">
+  <footer id='fot' class="page-footer">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -31,12 +32,13 @@
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Links</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="login.html">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="register.html">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="index.html">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="fly.html">Link 4</a></li>
-                <li><a class="grey-text text-lighten-3" href="drive.html">Link 5</a></li>
-                <li><a class="grey-text text-lighten-3" href="profile.html">Link 6</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="login">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="register">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="home">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="fly">Link 4</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="driving">Link 5</a></li>
+                <li><a class="grey-text text-lighten-3" ui-sref="profile">Link 6</a></li>
+
               </ul>
             </div>
           </div>
